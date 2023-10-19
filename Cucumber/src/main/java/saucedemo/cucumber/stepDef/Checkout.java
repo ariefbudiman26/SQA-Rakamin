@@ -14,7 +14,7 @@ public class Checkout {
     WebDriver driver;
     String baseUrl = "https://www.saucedemo.com/";
 
-    String firstName = "Ariep";
+    String firstName = "";
     String lastName = "Budiman";
     String postalCode = "28281";
 
@@ -41,17 +41,17 @@ public class Checkout {
 
     @Then("Checkout page Displayed")
     public void checkoutPageDisplayed() {
-        driver.findElement(By.xpath("//*[@id=\"cart_contents_container\"]/div/div[1]")).isDisplayed();
+        driver.findElement(By.id("checkout"));
     }
 
     @And("User Click Checkout Button")
     public void userClickCheckoutButton() {
-        driver.findElement(By.xpath("//*[@id=\"checkout\"]")).click();
+        driver.findElement(By.id("checkout")).click();
     }
 
     @Then("Checkout Confirmation page Displayed")
     public void checkoutConfirmationPageDisplayed() {
-        driver.findElement(By.xpath("//*[@id=\"header_container\"]/div[2]/span")).isDisplayed();
+        driver.findElement(By.id("continue"));
     }
 
     @And("User Enter First Name")
@@ -71,22 +71,22 @@ public class Checkout {
 
     @And("User Click Continue Button")
     public void userClickContinueButton() {
-        driver.findElement(By.xpath("//*[@id=\"continue\"]")).click();
+        driver.findElement(By.id("continue")).click();
     }
 
     @Then("Checkout Overview page Displayed")
     public void checkoutOverviewPageDisplayed() {
-        driver.findElement(By.xpath("//*[@id=\"header_container\"]/div[2]/span")).isDisplayed();
+        driver.findElement(By.id("finish"));
     }
 
     @When("User Click Finish Button")
     public void userClickFinishButton() {
-        driver.findElement(By.xpath("//*[@id=\"finish\"]")).click();
+        driver.findElement(By.id("finish")).click();
     }
 
     @Then("Checkout Complete page Displayed")
     public void checkoutCompletePageDisplayed() {
-        driver.findElement(By.xpath("//*[@id=\"header_container\"]/div[2]/span")).isDisplayed();
+        driver.findElement(By.id("back-to-products"));
         driver.close();
         driver.quit();
     }
@@ -103,17 +103,17 @@ public class Checkout {
 
     @And("User Enter Empty Postal Code")
     public void userEnterEmptyPostalCode() {
-        driver.findElement(By.id("last-name")).sendKeys(postalCode);
+        driver.findElement(By.id("postal-code")).sendKeys(postalCode);
     }
 
     @When("Click Continue Button")
     public void clickContinueButton() {
-        driver.findElement(By.xpath("//*[@id=\"continue\"]")).click();
+        driver.findElement(By.id("continue")).click();
     }
 
     @Then("Message Error Displayed")
     public void messageErrorDisplayed() {
-        driver.findElement(By.xpath("//*[@id=\"checkout_info_container\"]/div/form/div[1]/div[4]/h3/button"));
+        driver.findElement(By.className("error-button"));
         driver.close();
         driver.quit();
     }
