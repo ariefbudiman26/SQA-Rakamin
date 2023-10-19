@@ -1,5 +1,6 @@
 Feature: Checkout Saucedemo
 
+  @Positive
   Scenario: Success Checkout
     Given User Login to website Saucedemo
     And User Click Add to cart an Item to Checkout
@@ -15,6 +16,7 @@ Feature: Checkout Saucedemo
     When User Click Finish Button
     Then Checkout Complete page Displayed
 
+  @Negative
   Scenario: Failed Checkout
     Given User Login to website Saucedemo
     And User Click Add to cart an Item to Checkout

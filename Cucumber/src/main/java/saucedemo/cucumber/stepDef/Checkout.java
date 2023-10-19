@@ -16,7 +16,7 @@ public class Checkout {
     String username = "standard_user";
     String password = "secret_sauce";
 
-    String firstName = "";
+    String firstName = "Ariep";
     String lastName = "Budiman";
     String postalCode = "28281";
 

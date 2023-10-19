@@ -1,10 +1,12 @@
 Feature: Cart Saucedemo
 
+  @Positive
   Scenario: User Success Add Item to Cart
     Given User Login to Saucedemo
     When User Click Add to cart
     Then Cart Badge Displayed
 
+  @Positive
   Scenario: User Success Remove Item that has Added to Cart
     Given User Login to Saucedemo
     And User Click Add to cart an Item
