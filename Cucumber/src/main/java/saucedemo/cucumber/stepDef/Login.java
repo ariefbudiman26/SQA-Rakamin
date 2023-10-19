@@ -14,6 +14,9 @@ public class Login {
     WebDriver driver;
     String baseUrl = "https://www.saucedemo.com/";
 
+    String username = "standard_user";
+    String password = "secret_sauce";
+
     @Given("Login page saucedemo")
     public void loginPageSaucedemo() {
         WebDriverManager.chromedriver().setup();
@@ -25,12 +28,12 @@ public class Login {
 
     @When("User enter valid Username")
     public void userEnterValidUsername() {
-        driver.findElement(By.id("user-name")).sendKeys("standard_user");
+        driver.findElement(By.id("user-name")).sendKeys(username);
     }
 
     @And("User enter valid Password")
     public void userEnterValidPassword() {
-        driver.findElement(By.id("password")).sendKeys("secret_sauce");
+        driver.findElement(By.id("password")).sendKeys(password);
     }
 
     @And("Click Login Button")
@@ -45,12 +48,12 @@ public class Login {
 
     @When("User enter invalid Username")
     public void userEnterInvalidUsername() {
-        driver.findElement(By.id("user-name")).sendKeys("ariepbudiman");
+        driver.findElement(By.id("user-name")).sendKeys(username);
     }
 
     @And("User enter invalid Password")
     public void userEnterInvalidPassword() {
-        driver.findElement(By.id("password")).sendKeys("12345");
+        driver.findElement(By.id("password")).sendKeys(password);
     }
 
     @Then("Error Message Displayed")

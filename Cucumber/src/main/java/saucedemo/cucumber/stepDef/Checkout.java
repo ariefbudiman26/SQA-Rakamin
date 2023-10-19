@@ -13,6 +13,11 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class Checkout {
     WebDriver driver;
     String baseUrl = "https://www.saucedemo.com/";
+
+    String firstName = "Ariep";
+    String lastName = "Budiman";
+    String postalCode = "28281";
+
     @Given("User Login to website Saucedemo")
     public void userLoginToWebsiteSaucedemo() {
         WebDriverManager.chromedriver().setup();
@@ -51,17 +56,17 @@ public class Checkout {
 
     @And("User Enter First Name")
     public void userEnterFirstName() {
-        driver.findElement(By.id("first-name")).sendKeys("Ariep");
+        driver.findElement(By.id("first-name")).sendKeys(firstName);
     }
 
     @And("User Enter Last Name")
     public void userEnterLastName() {
-        driver.findElement(By.id("last-name")).sendKeys("Budiman");
+        driver.findElement(By.id("last-name")).sendKeys(lastName);
     }
 
     @And("User Enter Postal Code")
     public void userEnterPostalCode() {
-        driver.findElement(By.id("postal-code")).sendKeys("28281");
+        driver.findElement(By.id("postal-code")).sendKeys(postalCode);
     }
 
     @And("User Click Continue Button")
@@ -88,17 +93,17 @@ public class Checkout {
 
     @And("User Enter Empty First Name")
     public void userEnterEmptyFirstName() {
-        driver.findElement(By.id("first-name")).sendKeys("");
+        driver.findElement(By.id("first-name")).sendKeys(firstName);
     }
 
     @And("User Enter Empty Last Name")
     public void userEnterEmptyLastName() {
-        driver.findElement(By.id("last-name")).sendKeys("");
+        driver.findElement(By.id("last-name")).sendKeys(lastName);
     }
 
     @And("User Enter Empty Postal Code")
     public void userEnterEmptyPostalCode() {
-        driver.findElement(By.id("last-name")).sendKeys("");
+        driver.findElement(By.id("last-name")).sendKeys(postalCode);
     }
 
     @When("Click Continue Button")
