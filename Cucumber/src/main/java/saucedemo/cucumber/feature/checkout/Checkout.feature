@@ -1,4 +1,5 @@
 Feature: Checkout Saucedemo
+
   Scenario: Success Checkout
     Given User Login to website Saucedemo
     And User Click Add to cart an Item to Checkout
