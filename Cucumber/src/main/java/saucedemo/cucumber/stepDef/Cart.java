@@ -34,7 +34,7 @@ public class Cart {
 
     @Then("Cart Badge Displayed")
     public void cartBadgeDisplayed() {
-        driver.findElement(By.xpath("//*[@id=\"shopping_cart_container\"]/a/span")).isDisplayed();
+        driver.findElement(By.className("shopping_cart_badge"));
         driver.close();
         driver.quit();
     }
