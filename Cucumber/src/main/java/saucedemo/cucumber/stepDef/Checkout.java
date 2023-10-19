@@ -36,7 +36,7 @@ public class Checkout {
 
     @Then("Checkout page Displayed")
     public void checkoutPageDisplayed() {
-        driver.findElement(By.xpath("//*[@id=\"cart_contents_container\"]/div/div[1]"));
+        driver.findElement(By.xpath("//*[@id=\"cart_contents_container\"]/div/div[1]")).isDisplayed();
     }
 
     @And("User Click Checkout Button")
@@ -46,7 +46,7 @@ public class Checkout {
 
     @Then("Checkout Confirmation page Displayed")
     public void checkoutConfirmationPageDisplayed() {
-        driver.findElement(By.xpath("//*[@id=\"header_container\"]/div[2]/span"));
+        driver.findElement(By.xpath("//*[@id=\"header_container\"]/div[2]/span")).isDisplayed();
     }
 
     @And("User Enter First Name")
@@ -71,7 +71,7 @@ public class Checkout {
 
     @Then("Checkout Overview page Displayed")
     public void checkoutOverviewPageDisplayed() {
-        driver.findElement(By.xpath("//*[@id=\"header_container\"]/div[2]/span"));
+        driver.findElement(By.xpath("//*[@id=\"header_container\"]/div[2]/span")).isDisplayed();
     }
 
     @When("User Click Finish Button")
@@ -81,7 +81,7 @@ public class Checkout {
 
     @Then("Checkout Complete page Displayed")
     public void checkoutCompletePageDisplayed() {
-        driver.findElement(By.xpath("//*[@id=\"header_container\"]/div[2]/span"));
+        driver.findElement(By.xpath("//*[@id=\"header_container\"]/div[2]/span")).isDisplayed();
         driver.close();
         driver.quit();
     }
