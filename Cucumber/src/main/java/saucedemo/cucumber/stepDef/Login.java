@@ -44,6 +44,8 @@ public class Login {
     @Then("Home Page should be Displayed")
     public void homePageShouldBeDisplayed() {
         driver.findElement(By.id("inventory_container"));
+        driver.close();
+        driver.quit();
     }
 
     @When("User enter invalid Username")
